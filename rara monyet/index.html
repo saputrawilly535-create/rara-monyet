@@ -1,0 +1,229 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Rara Cantikkku</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ffd6e7,#fff5f7,#ffe9ec);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+.card{
+background:white;
+width:90%;
+max-width:420px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+h1{
+color:#d94b7c;
+}
+
+.gallery{
+display:flex;
+gap:10px;
+justify-content:center;
+margin:15px 0;
+}
+
+.gallery img{
+width:90px;
+height:90px;
+object-fit:cover;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.message{
+font-size:14px;
+color:#444;
+line-height:1.6;
+}
+
+.full-message{
+display:none;
+opacity:0;
+transition:0.6s;
+}
+
+.special-photo{
+display:none;
+margin-top:15px;
+}
+
+.special-photo img{
+width:100%;
+border-radius:15px;
+box-shadow:0 6px 20px rgba(0,0,0,0.15);
+}
+
+button{
+margin-top:15px;
+background:#ff6fa5;
+border:none;
+padding:12px 18px;
+border-radius:25px;
+color:white;
+font-size:14px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ff4e91;
+transform:scale(1.05);
+}
+
+.footer{
+margin-top:20px;
+font-size:12px;
+color:#777;
+}
+
+.heart{
+position:fixed;
+top:-10px;
+color:#ff6fa5;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Untuk Rara Cantikkku</h1>
+
+<!-- GALERI FOTO -->
+<div class="gallery">
+
+<img src="foto1.jpeg" alt="foto1">
+<img src="foto2.jpeg" alt="foto2">
+<img src="foto3.jpeg" alt="foto3">
+
+</div>
+
+<div class="message">
+<p>Ada sedikit pesan untuk raraaaa<3</p>
+</div>
+
+<button onclick="showMessage()">
+Pencettt akuuuuu!!!!!
+</button>
+
+<div class="message full-message" id="fullMessage">
+
+<p>I'm so sowwyyyy:(</p>
+
+<p>Maapin aku yaaa karena aku jahat ke rara cantikkkku dan tidak akan aku ulangin lagi janji</p>
+
+<p>Cuma rara perempuan terbaik, tercantik, tercomel, termonyet dan tak ada monyet selain rara</p>
+
+<p>Terima kasih sudah mau baca yaa sayangggg. Aku harap rara bisa memaafkanku dan mulai membalas whatsapp aku hehe.</p>
+
+<button onclick="forgiveMe()">
+Maafin aku yaww?
+</button>
+
+</div>
+
+<!-- FOTO SPESIAL -->
+<div class="special-photo" id="photoReveal">
+
+<img src="foto4.png" alt="foto spesial">
+
+<p style="margin-top:10px;color:#555;">
+Terima kasih sudah memberi kesempatan lagi ❤️
+(Inilah aku dan rara hihi wopyu mwaaa)
+</p>
+
+</div>
+
+<div class="footer">
+Dari: Monyetnya Raraaaa<br>
+14 Maret 2026
+</div>
+
+</div>
+
+<!-- LAGU -->
+<audio id="bgmusic" loop>
+<source src="lagu.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function showMessage(){
+
+const msg=document.getElementById("fullMessage");
+
+msg.style.display="block";
+
+setTimeout(()=>{
+msg.style.opacity="1";
+},100);
+
+document.getElementById("bgmusic").play();
+
+}
+
+function forgiveMe(){
+
+const photo=document.getElementById("photoReveal");
+
+photo.style.display="block";
+
+}
+
+function createHeart(){
+
+const heart=document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(12+Math.random()*18)+"px";
+
+heart.style.animationDuration=(4+Math.random()*4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
+```
